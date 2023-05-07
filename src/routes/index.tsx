@@ -58,7 +58,8 @@ export default component$(() => {
               Example Apps
             </div>
             <p>
-              Have a look at the <a href="/demo/flower">Flower App</a> or the{' '}
+              Have a look at the <a href="/react">React Integration</a>,{' '}
+              <a href="/demo/flower">Flower App</a> or the{' '}
               <a href="/demo/todolist">Todo App</a>.
             </p>
           </Infobox>
@@ -106,7 +107,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: 'description',
-      content: 'Qwik site description',
-    },
-  ],
+      content: 'Qwik site description'
+    }
+  ]
 };
