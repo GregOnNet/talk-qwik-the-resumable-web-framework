@@ -21,7 +21,9 @@ export default component$(() => {
       font-size: 1rem;
     }
 
-    .center {
+    .table-app-container {
+      padding: 1em;
+      background: #f4f4f4;
       text-align: center
     }
   `);
@@ -35,10 +37,12 @@ export default component$(() => {
           Hello from <span class="highlight">React</span>
         </h1>
         <p>Have fun building your Qwik-App with React Components.</p>
+        <p>
+          <button onClick$={() => (show.value = true)}>Show table</button>
+        </p>
       </div>
 
-      <div class="center">
-        <button onClick$={() => (show.value = true)}>Show table</button>
+      <div class="table-app-container">
         {show.value && <TableApp client:visible></TableApp>}
       </div>
     </>

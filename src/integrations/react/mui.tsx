@@ -1,16 +1,8 @@
 /** @jsxImportSource react */
 
 import { qwikify$ } from '@builder.io/qwik-react';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import type { GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { DataGrid } from '@mui/x-data-grid';
-
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark'
-  }
-});
 
 export const TableApp = qwikify$(() => {
   const columns: GridColDef[] = [
@@ -53,17 +45,14 @@ export const TableApp = qwikify$(() => {
   ];
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <DataGrid
-        autoHeight={true} // This is not recommended for large datasets as row virtualization will not be able to improve performance by limiting the number of elements rendered in the DOM.
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-        disableSelectionOnClick
-      />
-    </ThemeProvider>
+    <DataGrid
+      autoHeight={true} // This is not recommended for large datasets as row virtualization will not be able to improve performance by limiting the number of elements rendered in the DOM.
+      rows={rows}
+      columns={columns}
+      pageSize={5}
+      rowsPerPageOptions={[5]}
+      checkboxSelection
+      disableSelectionOnClick
+    />
   );
 });
