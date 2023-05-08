@@ -11,6 +11,18 @@
   margin: 0 auto;
 }
 
+.gettingstarted a {
+  color: white;
+}
+
+.gettingstarted a:hover {
+  text-decoration: underline;
+}
+
+.gettingstarted li {
+  text-align: left;
+}
+
 .gettingstarted .intro {
   font-size: 1rem;
   width: 100%;

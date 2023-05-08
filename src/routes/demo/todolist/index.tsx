@@ -1,11 +1,11 @@
 import { component$ } from '@builder.io/qwik';
 import {
-  type DocumentHead,
-  routeLoader$,
-  routeAction$,
-  zod$,
-  z,
   Form,
+  routeAction$,
+  routeLoader$,
+  z,
+  zod$,
+  type DocumentHead
 } from '@builder.io/qwik-city';
 import styles from './todolist.module.css';
 
@@ -20,14 +20,20 @@ export const useListLoader = routeLoader$(() => {
 });
 
 export const useAddToListAction = routeAction$(
-  (item) => {
+  async (item, requestEvent) => {
+    console.log('Request headers:', requestEvent.headers);
+    console.log('Request cookies:', requestEvent.cookie);
+    console.log('Request url:', requestEvent.url);
+    console.log('Request params:', requestEvent.params);
+    console.log('Request body:', await requestEvent.parseBody());
+
     list.push(item);
     return {
-      success: true,
+      success: true
     };
   },
   zod$({
-    text: z.string().trim().min(1),
+    text: z.string().trim().min(1)
   })
 );
 
@@ -63,12 +69,14 @@ export default component$(() => {
           </button>
         </Form>
 
-        <p class={styles.hint}>PS: This little app works even when JavaScript is disabled.</p>
+        <p class={styles.hint}>
+          PS: This little app works even when JavaScript is disabled.
+        </p>
       </div>
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: 'Qwik Todo List',
+  title: 'Qwik Todo List'
 };
