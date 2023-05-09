@@ -47,6 +47,9 @@ export default component$(() => {
             <a href="/demo/useTask">useTask$</a>
           </li>
           <li>
+            <a href="/demo/counter">Counter</a>
+          </li>
+          <li>
             <a href="/demo/todolist">routeLoader$ & routeAction$</a>
           </li>
           <li>
