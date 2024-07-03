@@ -1,7 +1,13 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useSignal, useTask$ } from '@builder.io/qwik';
 import { Link, type DocumentHead } from '@builder.io/qwik-city';
 
 export default component$(() => {
+  const randomNumber = useSignal(0);
+
+  useTask$(() => {
+    randomNumber.value = Math.random() * 10;
+  });
+
   return (
     <>
       <h1>Hi 👋</h1>
@@ -10,6 +16,8 @@ export default component$(() => {
         <br />
         Happy coding.
       </div>
+
+      <p>Greetings from the server: {randomNumber.value}</p>
 
       <ul>
         <li>
