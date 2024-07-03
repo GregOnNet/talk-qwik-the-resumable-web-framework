@@ -21,5 +21,7 @@ export default component$(() => {
   );
 });
 
-// TODO make the clock being executed when it becomes visible
-// export const Clock = component$(() => )
+// TODO: Load timer once it becomes visible
+export const Timer = component$(() => {
+  return <></>;
+});

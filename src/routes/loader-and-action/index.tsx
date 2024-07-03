@@ -7,7 +7,8 @@ import {
   zod$,
   type DocumentHead
 } from '@builder.io/qwik-city';
-import styles from './todolist.module.css';
+
+import styles from './styles.module.css';
 
 interface ListItem {
   text: string;

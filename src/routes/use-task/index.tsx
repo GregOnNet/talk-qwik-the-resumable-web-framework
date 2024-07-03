@@ -5,7 +5,7 @@ export default component$(() => {
   const inputSignalDebounced = useSignal('');
 
   useTask$(({ track }) => {
-    console.log('useTask$ is executed.');
+    console.log('⚠️ useTask$ is executed.');
 
     const inputValue = track(() => inputSignal.value);
 
